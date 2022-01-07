@@ -1,0 +1,13 @@
+{
+  "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts"],
+  "include": ["src/**/*"],
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "module": "commonjs",
+    "target": "esnext",
+    "types": ["node"],
+    "esModuleInterop": true,
+    "moduleResolution": "node"
+  }
+}
