@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/IanWatt/find-new-puppies#readme",
   "dependencies": {
+    "dotenv": "^10.0.0",
+    "postmark": "^2.8.1",
     "puppeteer": "^13.0.1"
   },
   "devDependencies": {

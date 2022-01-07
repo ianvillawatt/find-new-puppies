@@ -1,4 +1,5 @@
 export interface Config {
+  agency: string;
   petsUrl: string;
   selectors: {
     petContainer: string; // parent for all other selectors
@@ -24,6 +25,11 @@ const rescueGroupsLinkExtractor: Config["getPetUrl"] = (
   return `${petsUrl}/#action_0=pet&animalID_0=${id.trim()}&petIndex_0=${index.trim()}`;
 };
 
+const defaultConfig = {
+  petLinkAttr: "href",
+  getPetUrl: (_: unknown, petLinkAttr: string) => petLinkAttr,
+};
+
 const rgConfig = {
   petLinkAttr: "onclick",
   getPetUrl: rescueGroupsLinkExtractor,
@@ -31,6 +37,7 @@ const rgConfig = {
 
 export const configs: Config[] = [
   {
+    agency: "Secondhand Hounds",
     petsUrl: "https://www.secondhandhounds.org/dogs-for-adoption",
     selectors: {
       petContainer: ".rgtkSearchResultsCell",
@@ -39,18 +46,17 @@ export const configs: Config[] = [
     ...rgConfig,
   },
   {
+    agency: "Ruff Start",
     petsUrl:
       "https://ruffstartrescue.org/adopt/adoptable-animals/dogs-puppies/",
     selectors: {
       petContainer: "ul.animal-list li",
       petLink: "p a",
     },
-    petLinkAttr: "href",
-    getPetUrl: (_, petLinkAttr: string) => {
-      return `https://ruffstartrescue.org${petLinkAttr}`;
-    },
+    ...defaultConfig,
   },
   {
+    agency: "No Dog Left Behind",
     petsUrl: "https://ndlbrescue.org/adoptable-dogs",
     selectors: {
       petContainer: ".rgtkSearchResultsTable tr",
@@ -60,24 +66,22 @@ export const configs: Config[] = [
     ...rgConfig,
   },
   {
+    agency: "Humane Society",
     petsUrl: "https://www.animalhumanesociety.org/adoption/dogs",
     selectors: {
       petContainer: "div.animal",
       petLink: ".field--name-name a",
     },
-    petLinkAttr: "href",
-    getPetUrl: (_, petLinkAttr) => {
-      return `https://animalhumanesociety.org${petLinkAttr}`;
-    },
+    ...defaultConfig,
   },
   {
+    agency: "Pet Haven",
     petsUrl: "https://pethavenmn.org/adopt/adoptable-dogs/",
     selectors: {
       petContainer: ".pets .dog",
       petLink: ".description .a",
       petNameText: ".name a",
     },
-    petLinkAttr: "href",
-    getPetUrl: (_, petLinkAttr) => petLinkAttr,
+    ...defaultConfig,
   },
 ];

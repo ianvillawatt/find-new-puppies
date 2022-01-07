@@ -137,4 +137,5 @@ dist
 
 # pets data
 
-pets.json
+pets-all.json
+pets-new.json
