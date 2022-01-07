@@ -1,0 +1,24 @@
+{
+  "name": "find-new-puppies",
+  "version": "1.0.0",
+  "description": "finds puppies",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IanWatt/find-new-puppies.git"
+  },
+  "author": "Ian Villa-Watt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IanWatt/find-new-puppies/issues"
+  },
+  "homepage": "https://github.com/IanWatt/find-new-puppies#readme",
+  "dependencies": {
+    "jssoup": "0.0.15",
+    "node-fetch": "^3.1.0"
+  }
+}
