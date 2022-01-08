@@ -79,7 +79,7 @@ export const configs: Config[] = [
     petsUrl: "https://pethavenmn.org/adopt/adoptable-dogs/",
     selectors: {
       petContainer: ".pets .dog",
-      petLink: ".description .a",
+      petLink: ".description a",
       petNameText: ".name a",
     },
     ...defaultConfig,
