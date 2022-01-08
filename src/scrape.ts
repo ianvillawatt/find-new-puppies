@@ -3,7 +3,7 @@ import { Config, configs } from "./config";
 import { addPet, savePets } from "./petstore";
 
 export async function scrape() {
-  const browser = await puppeteer.launch({ headless: false });
+  const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
 
   for (const config of configs) {
