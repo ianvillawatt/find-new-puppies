@@ -134,8 +134,3 @@ dist
 # TernJS port file
 
 .tern-port
-
-# pets data
-
-pets-all.json
-pets-new.json
