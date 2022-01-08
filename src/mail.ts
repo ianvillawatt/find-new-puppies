@@ -5,7 +5,7 @@ import { ServerClient } from "postmark";
 const phrases = ["Woof woof!", "Look! A squirrel!", "Ruff ruff!"];
 
 const recipients = [
-  "ian@leafqda.com",
+  //"ian@leafqda.com",
   "iancharleswatt@gmail.com",
   "cillavilla@live.com",
 ];
