@@ -29,7 +29,7 @@ export async function savePets() {
 
   const newPets = foundPets.filter((found) => {
     const same = savedPets.find((saved) => {
-      return saved.name == found.name && saved.link == found.link;
+      return saved.name == found.name && saved.agency == found.agency;
     });
 
     return same ? false : true;
