@@ -1,9 +1,9 @@
 import puppeteer, { Page } from "puppeteer";
-import { Config, configs } from "./config";
+import { Config, configs as allConfigs } from "./config";
 import { addPet, savePets } from "./petstore";
 
-export async function scrape() {
-  const browser = await puppeteer.launch({ headless: true });
+export async function scrape(headless = true, configs = allConfigs) {
+  const browser = await puppeteer.launch({ headless });
   const page = await browser.newPage();
 
   for (const config of configs) {

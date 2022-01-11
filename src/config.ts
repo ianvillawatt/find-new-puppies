@@ -84,4 +84,13 @@ export const configs: Config[] = [
     },
     ...defaultConfig,
   },
+  {
+    agency: "Spot's Last Stop",
+    petsUrl: "https://spotslaststop.org/adopt/adoptable-dogs/",
+    selectors: {
+      petContainer: ".adoptable-dog",
+      petLink: "a.btn-default",
+    },
+    ...defaultConfig,
+  },
 ];
